@@ -1,2 +1,2 @@
 # script_calcmmy
-script to calculate %SPRmmy
+provides script to calculate %SPRmmy 
