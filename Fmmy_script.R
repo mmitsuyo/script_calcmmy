@@ -47,7 +47,8 @@ if(set_analysis == "clark"){
                       M=temp$M,
                       F=temp$F,
                       Age=temp$Age,
-                      Stock=temp$Stock)
+                      Stock=temp$Stock,
+					  plus=temp$plus)
   
       bpara$waa.mid <- bpara$waa
       bpara$maa.mid <- bpara$maa
@@ -126,7 +127,8 @@ if(set_analysis == "group"){
                       M=temp$M,
                       F=temp$F,
                       Age=temp$Age,
-                      Stock=temp$Stock)
+                      Stock=temp$Stock,
+					  plus=temp$plus)
   
       bpara$waa.mid <- bpara$waa
       bpara$maa.mid <- bpara$maa
@@ -214,7 +216,8 @@ if(set_analysis == "species"){
                         M=temp$M,
                         F=temp$F,
                         Age=temp$Age,
-                        Stock=temp$Stock)
+                        Stock=temp$Stock,
+					    plus=temp$plus)
     
     bpara$waa.mid <- bpara$waa
     bpara$maa.mid <- bpara$maa
