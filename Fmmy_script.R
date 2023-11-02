@@ -1,14 +1,18 @@
 #'Setting of runs ==============================================================================
+devtools::install_github("mmitsuyo/calcmmy")
+library(calcmmy)
+library(tidyverse)
+
 #' 1) Read in data 
-  #Japan_dat <- read.csv("Japan_data_1sp.csv") 
+  
   Japan_dat <- readr::read_csv(system.file("extdata","Japan_data_1sp.csv",package="calcmmy"))
-  #Japan_dat <- read.csv("Japan_data_extend.csv") 
-		   
+  #Japan_dat <-readr::read_csv(system.file("extdata","Japan_data_extend_revised_noT.csv",package="calcmmy"))
+
 #' 2) Specify which quantile to use for steepness (h)
   set_hsd <- 1 # if 1 then sd, if 2 then 2sd		   
 
 #' 3) Specify scenario
-  set_analysis <- "species" # either "clark" | "group" | "species"
+  set_analysis <- "group" # either "clark" | "group" | "species"
   
 #' 4) for scenario "group" and "species", specify to use only BH or both (BH and RI). if 1= only BH, 2= both
   set_group_sr <- 1 # default is 1
@@ -47,7 +51,8 @@ if(set_analysis == "clark"){
                       M=temp$M,
                       F=temp$F,
                       Age=temp$Age,
-                      Stock=temp$Stock)
+                      Stock=temp$Stock,
+					  plus=temp$plus)
   
       bpara$waa.mid <- bpara$waa
       bpara$maa.mid <- bpara$maa
@@ -126,7 +131,8 @@ if(set_analysis == "group"){
                       M=temp$M,
                       F=temp$F,
                       Age=temp$Age,
-                      Stock=temp$Stock)
+                      Stock=temp$Stock,
+					  plus=temp$plus)
   
       bpara$waa.mid <- bpara$waa
       bpara$maa.mid <- bpara$maa
@@ -214,7 +220,8 @@ if(set_analysis == "species"){
                         M=temp$M,
                         F=temp$F,
                         Age=temp$Age,
-                        Stock=temp$Stock)
+                        Stock=temp$Stock,
+					    plus=temp$plus)
     
     bpara$waa.mid <- bpara$waa
     bpara$maa.mid <- bpara$maa
